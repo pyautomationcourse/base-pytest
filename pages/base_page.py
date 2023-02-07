@@ -1,5 +1,15 @@
+import requests
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+
+def send_request(method, url, auth=None, body=None, headers=None, params=None):
+    """Send request using requests library"""
+    if method == "GET":
+        response = requests.get(url, auth=auth, headers=headers, params=params)
+    elif method == "POST":
+        response = requests.post(url, auth=auth, data=body, headers=headers, params=params)
+    return response
 
 
 class BasePage:
