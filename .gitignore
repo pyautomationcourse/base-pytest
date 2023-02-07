@@ -1,2 +1,3 @@
 /.idea/
 base-pytest.iml
+/tests/.pytest_cache/
